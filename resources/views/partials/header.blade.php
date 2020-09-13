@@ -4,36 +4,31 @@
 
 
   <meta charset="utf-8">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-    <script src=”https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 <title>One Note</title>
 
 
 
 
-  <link href="{{asset('assets/img/favicon.png')}} " rel="shortcut icon">
+  <link href="{{asset('/assets/img/favicon.png')}} " rel="shortcut icon">
 
-  <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}} ">
-  <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap-slider.css')}} ">
+  <link rel="stylesheet" href="{{asset('/assets/plugins/bootstrap/css/bootstrap.min.css')}} ">
+  <link rel="stylesheet" href="{{asset('/assets/plugins/bootstrap/css/bootstrap-slider.css')}} ">
 
-  <link href="{{asset('assets/plugins/font-awesome/css/font-awesome.min.css')}} " rel="stylesheet">
+  <link href="{{asset('/assets/plugins/font-awesome/css/font-awesome.min.css')}} " rel="stylesheet">
 
-  <link href="{{asset('assets/plugins/slick-carousel/slick/slick.css')}} " rel="stylesheet">
-  <link href="{{asset('assets/plugins/slick-carousel/slick/slick-theme.css')}} " rel="stylesheet">
+  <link href="{{asset('/assets/plugins/slick-carousel/slick/slick.css')}} " rel="stylesheet">
+  <link href="{{asset('/assets/plugins/slick-carousel/slick/slick-theme.css')}} " rel="stylesheet">
 
-  <link href="{{asset('assets/plugins/fancybox/jquery.fancybox.pack.css')}} " rel="stylesheet">
-  <link href="{{asset('assets/plugins/jquery-nice-select/css/nice-select.css')}} " rel="stylesheet">
+  <link href="{{asset('/assets/plugins/fancybox/jquery.fancybox.pack.css')}} " rel="stylesheet">
+  <link href="{{asset('/assets/plugins/jquery-nice-select/css/nice-select.css')}} " rel="stylesheet">
 
-  <link href="{{asset('assets/css/style.css')}} " rel="stylesheet">
+  <link href="{{asset('/assets/css/style.css')}} " rel="stylesheet">
+  <link href="{{asset('/assets/css/price_tag.css')}} " rel="stylesheet">
 
 
 
@@ -94,11 +89,11 @@
 							</li>
 							<li class="nav-item dropdown dropdown-slide">
 								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Courses <span><i class="fa fa-angle-down"></i></span>
+									Notes <span><i class="fa fa-angle-down"></i></span>
 								</a>
 								<!-- Dropdown list -->
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="category.html">View all courses</a>
+									<a class="dropdown-item" href="{{ url('all-notes') }}">View all notes</a>
 								</div>
 							</li>
 
@@ -155,4 +150,4 @@
 
 
 
- @include('flash-message')
+

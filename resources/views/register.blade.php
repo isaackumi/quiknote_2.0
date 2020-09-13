@@ -2,7 +2,7 @@
 @include('partials.header')
 
 
-<section class="login py-5 border-top-1">
+<section class="">
 
         <div class="container">
             <div class="row justify-content-center">

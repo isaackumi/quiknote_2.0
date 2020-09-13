@@ -4,8 +4,9 @@
 <section class="login py-5 border-top-1">
 
     <div class="container">
+        @include('flash-message')
         <div class="row justify-content-center">
-          @include('flash-message')
+
             <div class="col-lg-5 col-md-8 align-item-center">
                 <div class="border">
                     <h3 class="bg-gray p-4">Login Now</h3>

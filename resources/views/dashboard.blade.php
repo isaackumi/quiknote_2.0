@@ -3,9 +3,11 @@
 <!--==================================
 =            User Profile            =
 ===================================-->
+
 <section class="dashboard section">
   <!-- Container Start -->
   <div class="container">
+  @include('flash-message')
     <!-- Row Start -->
     <div class="row">
       <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
@@ -16,13 +18,13 @@
             <!-- User Image -->
               @if(Auth::user())
             <div class="profile-thumb">
-              <img src="{{asset('assets/images/user/user-thumb.jpg')}} " alt="" class="rounded-circle">
+              <img src="{{ asset('/uploads/avatars') }}/{{ Auth::user()->photo_url }}" alt="" class="rounded-circle">
             </div>
             <!-- User Name -->
             <h5 class="text-center"> <strong>{{ Auth::user()->username }}</strong></h5>
             <h5 class="text-center"> Major: {{ Auth::user()->major }}</h5>
               <h5 class="text-center">{{ Auth::user()->university }}</h5>
-            <p>Joined {{ Auth::user()->created_at->format('d-m-Y') }}</p>
+            <p>Joined on :   {{ date('d M, Y', strtotime(Auth::user()->created_at)) }} </p>
 
           </div>
           @endif
@@ -74,27 +76,30 @@
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
         <div class="product-grid-list">
           <div class="row mt-30">
-            <div class="col-sm-12 col-lg-4 col-md-6">
+
+              @forelse($notes as $note)
+
+              <div class="col-sm-12 col-lg-4 col-md-6">
               <!-- product card -->
 <div class="product-item bg-light">
   <div class="card">
     <div class="thumb-content">
       <!-- <div class="price">$200</div> -->
-      <a href="single.html">
-        <img class="card-img-top img-fluid" src="{{asset('assets/images/products/products-1.jpg')}} " alt="Card image cap">
+      <a href="{{url('single-note')}}/{{$note->id}}">
+        <img style="width:100%;" class="card-img-top img-fluid" src="/storage/uploads/{{ $note->note_thumbnail }} " alt="Card image cap">
       </a>
     </div>
     <div class="card-body">
-        <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+        <h4 class="card-title"><a href="{{url('single-note')}}/{{$note->id}}">{{ $note->note_type ?? ' Note Type' }}</a></h4>
         <ul class="list-inline product-meta">
           <li class="list-inline-item">
-            <a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+{{--            <a href="{{url('single-note')}}/{{$note->id}}"><i class="fa fa-folder-open-o"></i>{{ $note->note_title ?? 'Note Title' }}</a>--}}
           </li>
           <li class="list-inline-item">
-            <a href="#"><i class="fa fa-calendar"></i>26th December</a>
+            <a href="#"><i class="fa fa-calendar"></i>{{ date('d M, Y', strtotime($note->created_at)) }} </a>
           </li>
         </ul>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+        <p class="card-text">{{ substr($note->note_description, 0,  20) }} ...</p>
         <div class="product-ratings">
           <ul class="list-inline">
             <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -107,145 +112,43 @@
     </div>
   </div>
 </div>
+              </div>
 
+              @empty
+                  <p>
+                      No notes at the moment!
+                  </p>
 
-
-            </div>
-            <div class="col-sm-12 col-lg-4 col-md-6">
-              <!-- product card -->
-<div class="product-item bg-light">
-  <div class="card">
-    <div class="thumb-content">
-      <!-- <div class="price">$200</div> -->
-      <a href="single.html">
-        <img class="card-img-top img-fluid" src="{{asset('assets/images/products/products-2.jpg')}} " alt="Card image cap">
-      </a>
-    </div>
-    <div class="card-body">
-        <h4 class="card-title"><a href="single.html">Study Table Combo</a></h4>
-        <ul class="list-inline product-meta">
-          <li class="list-inline-item">
-            <a href="single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#"><i class="fa fa-calendar"></i>26th December</a>
-          </li>
-        </ul>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
-        <div class="product-ratings">
-          <ul class="list-inline">
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-          </ul>
-        </div>
-    </div>
-  </div>
-</div>
-
-
-
-            </div>
-            <div class="col-sm-12 col-lg-4 col-md-6">
-              <!-- product card -->
-<div class="product-item bg-light">
-  <div class="card">
-    <div class="thumb-content">
-      <!-- <div class="price">$200</div> -->
-      <a href="single.html">
-        <img class="card-img-top img-fluid" src="{{asset('assets/images/products/products-3.jpg')}} " alt="Card image cap">
-      </a>
-    </div>
-    <div class="card-body">
-        <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
-        <ul class="list-inline product-meta">
-          <li class="list-inline-item">
-            <a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#"><i class="fa fa-calendar"></i>26th December</a>
-          </li>
-        </ul>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
-        <div class="product-ratings">
-          <ul class="list-inline">
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-          </ul>
-        </div>
-    </div>
-  </div>
-</div>
-
-
-
-            </div>
-            <div class="col-sm-12 col-lg-4 col-md-6">
-              <!-- product card -->
-<div class="product-item bg-light">
-  <div class="card">
-    <div class="thumb-content">
-      <!-- <div class="price">$200</div> -->
-      <a href="single.html">
-        <img class="card-img-top img-fluid" src="{{asset('assets/images/products/products-1.jpg')}} " alt="Card image cap">
-      </a>
-    </div>
-    <div class="card-body">
-        <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
-        <ul class="list-inline product-meta">
-          <li class="list-inline-item">
-            <a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#"><i class="fa fa-calendar"></i>26th December</a>
-          </li>
-        </ul>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
-        <div class="product-ratings">
-          <ul class="list-inline">
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-          </ul>
-        </div>
-    </div>
-  </div>
-</div>
+              @endforelse
 
 
 
 
 
-        </div>
       </div>
 
         <!-- pagination -->
         <div class="pagination justify-content-center">
           <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item active" ><a class="page-link" href="#" style="background-color: #800000">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </li>
-            </ul>
+
+              {{ $notes->onEachSide(1)->links() }}
+{{--            <ul class="pagination">--}}
+{{--              <li class="page-item">--}}
+{{--                <a class="page-link" href="#" aria-label="Previous">--}}
+{{--                  <span aria-hidden="true">&laquo;</span>--}}
+{{--                  <span class="sr-only">Previous</span>--}}
+{{--                </a>--}}
+{{--              </li>--}}
+{{--              <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+{{--              <li class="page-item active" ><a class="page-link" href="#" style="background-color: #800000">2</a></li>--}}
+{{--              <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+{{--              <li class="page-item">--}}
+{{--                <a class="page-link" href="#" aria-label="Next">--}}
+{{--                  <span aria-hidden="true">&raquo;</span>--}}
+{{--                  <span class="sr-only">Next</span>--}}
+{{--                </a>--}}
+{{--              </li>--}}
+{{--            </ul>--}}
           </nav>
         </div>
         <!-- pagination -->

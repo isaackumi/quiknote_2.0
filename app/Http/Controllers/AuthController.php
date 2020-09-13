@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Note;
 use Illuminate\Http\Request;
 use Validator,Redirect,Response;
 Use App\User;
@@ -58,9 +59,10 @@ class AuthController extends Controller
 
     public function dashboard()
     {
-
+        $notes = Note::where('user_id','=',Auth::User()->id)->paginate(6);
+//        dd($notes);
       if(Auth::check()){
-        return view('dashboard')->with('success','Logged In successfully');
+        return view('dashboard', compact('notes'))->with('success','Logged In successfully');
       }
       // try index
        return Redirect::to("login")->with('error','Opps! You do not have access');

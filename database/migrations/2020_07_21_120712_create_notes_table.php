@@ -17,13 +17,14 @@ class CreateNotesTable extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
             $table->string("note_title");
-            $table->string("note_thumbnail");
+            $table->string("note_thumbnail")->nullable();
             $table->string("note_description");
             $table->string("note_type");
-            $table->string("note_pdf");
-            $table->string("note_pdf_image_sample");
-            $table->string("note_creator_achievements");
-            $table->string("note_price");
+            $table->string("note_pdf")->nullable();
+            $table->string("note_pdf_image_sample")->nullable();
+            $table->text("note_creator_achievements");
+            $table->integer("note_price");
+            $table->string("course_name");
             $table->integer('user_id'); // user id as a foreign key
             $table->timestamps();
 

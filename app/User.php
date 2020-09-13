@@ -45,7 +45,7 @@ class User extends Authenticatable
    }
 
 
-    // mac commands are  diffenent kraaa , hahahahah
+
    // has many relationship (always with s)
    public function memberships()
    {
@@ -57,5 +57,17 @@ class User extends Authenticatable
     {
         // you always have to return the relationship as instance
         return $this->hasMany(Membership::class);
+    }
+
+    public function cart()
+    {
+        // you always have to return the relationship as instance
+        return $this->hasMany(Cart::class);
+    }
+
+    public function transaction()
+    {
+        // you always have to return the relationship as instance
+        return $this->hasMany(TransactionHistory::class);
     }
 }

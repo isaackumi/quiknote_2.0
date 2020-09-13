@@ -32,23 +32,22 @@
 </footer> -->
 
 <!-- JAVASCRIPTS -->
-<script src="{{asset('assets/plugins/jQuery/jquery.min.js')}} "></script>
-<script src="{{asset('assets/plugins/bootstrap/js/popper.min.js')}} "></script>
-<script src="{{asset('assets/plugins/bootstrap/js/bootstrap.min.js')}} "></script>
-<script src="{{asset('assets/plugins/bootstrap/js/bootstrap-slider.js')}} "></script>
+<script src="{{asset('/assets/plugins/jQuery/jquery.min.js')}} "></script>
+<script src="{{asset('/assets/plugins/bootstrap/js/popper.min.js')}} "></script>
+<script src="{{asset('/assets/plugins/bootstrap/js/bootstrap.min.js')}} "></script>
+<script src="{{asset('/assets/plugins/bootstrap/js/bootstrap-slider.js')}} "></script>
  <!-- tether js -->
-<script src="{{asset('assets/plugins/tether/js/tether.min.js')}} "></script>
-<script src="{{asset('assets/plugins/raty/jquery.raty-fa.js')}} "></script>
-<script src="{{asset('assets/plugins/slick-carousel/slick/slick.min.js')}} "></script>
-<script src="{{asset('assets/plugins/jquery-nice-select/js/jquery.nice-select.min.js')}} "></script>
-<script src="{{asset('assets/plugins/fancybox/jquery.fancybox.pack.js')}} "></script>
-<script src="{{asset('assets/plugins/smoothscroll/SmoothScroll.min.js')}} "></script>
+<script src="{{asset('/assets/plugins/tether/js/tether.min.js')}} "></script>
+<script src="{{asset('/assets/plugins/raty/jquery.raty-fa.js')}} "></script>
+<script src="{{asset('/assets/plugins/slick-carousel/slick/slick.min.js')}} "></script>
+<script src="{{asset('/assets/plugins/jquery-nice-select/js/jquery.nice-select.min.js')}} "></script>
+<script src="{{asset('/assets/plugins/fancybox/jquery.fancybox.pack.js')}} "></script>
+<script src="{{asset('/assets/plugins/smoothscroll/SmoothScroll.min.js')}} "></script>
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-<script src="{{asset('assets/plugins/google-map/gmap.js')}} "></script>
-<script src="{{asset('js/script.js')}} "></script>
-{{--@include('sweetalert::alert')--}}
-{{--@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])--}}
+<script src="{{asset('/assets/plugins/google-map/gmap.js')}} "></script>
+<script src="{{asset('/assets/js/script.js')}} "></script>
+
 
 </body>
 

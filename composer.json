@@ -12,10 +12,13 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
+        "intervention/image": "^2.5",
         "kingflamez/laravelrave": "^2.0",
         "laravel/framework": "^7.0",
+        "laravel/scout": "^8.1",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
+        "nicolaslopezj/searchable": "1.*",
         "uxweb/sweet-alert": "^2.0"
     },
     "require-dev": {

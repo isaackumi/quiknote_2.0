@@ -1,0 +1,35 @@
+.price-tag {
+            @include trans-duration(500ms);
+            box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.15);
+            width: 70px;
+            height: 70px;
+            border-radius: 5px;
+            position: absolute;
+            left: 10px;
+            bottom: -15px;
+            background-color: #ffffff;
+            @media #{$breakpoint-xs} {
+                width: 50px;
+                height: 50px;
+            }
+            h6 {
+                @include trans-duration(500ms);
+                margin-bottom: 0;
+                text-align: center;
+                font-weight: 600;
+                color: #636363;
+                span {
+                    @include trans-duration(500ms);
+                    display: block;
+                    font-size: 36px;
+                    font-weight: 700;
+                    color: #1f1f2c;
+                    @media #{$breakpoint-md} {
+                        font-size: 30px;
+                    }
+                    @media #{max-width:767px} {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
