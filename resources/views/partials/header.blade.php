@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>One Note</title>
+<title>QuikNote</title>
 
 
 
@@ -43,7 +43,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg navbar-light navigation">
-					<a class="navbar-brand" href="index.html">
+					<a class="navbar-brand" href="{{url('/')}}">
 						<img src="{{asset('assets/images/logo.jpg')}} " alt="LOGO" style="border-radius: -5%">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

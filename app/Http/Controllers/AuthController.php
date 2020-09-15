@@ -42,11 +42,13 @@ class AuthController extends Controller
    public function postRegistration(Request $request)
     {
         request()->validate([
-          'username' => 'required',
-          'major' => 'required',
-          'university' => 'required',
+          'username' => 'required|regex:/^[a-zA-Z]+$/u',
+          'major' => 'required|regex:/^[a-zA-Z]+$/u',
+          'university' => 'required|regex:/^[a-zA-Z]+$/u',
           'email' => 'required|email|unique:users',
-          'password' => 'required|min:6'
+          'password' => 'min:6|required_with:password_confirmation|same:confirm-password',
+            'confirm-password'=>'min:6'
+
         ]);
 
         $data = $request->all();

@@ -13,11 +13,11 @@
                     <form action="{{url('post-login')}}" method="POST">
                         {{ csrf_field() }}
                         <fieldset class="p-4">
-                            <input type="text" placeholder="Email" class="border p-3 w-100 my-2 form-control" name="email">
+                            <input type="text" placeholder="Email" class="border p-3 w-100 my-2 form-control" name="email" value="{{ old('email') }}">
                             @if ($errors->has('email'))
                               <span class="error">{{ $errors->first('email') }}</span>
                             @endif
-                            <input type="password" placeholder="Password" class="border p-3 w-100 my-2 form-control" name="password">
+                            <input type="password" placeholder="Password" class="border p-3 w-100 my-2 form-control" name="password" value="{{ old('password')  }}">
                             @if ($errors->has('password'))
                               <span class="error">{{ $errors->first('password') }}</span>
                             @endif

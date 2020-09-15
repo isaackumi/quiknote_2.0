@@ -168,4 +168,10 @@ foreach ( $carts as $cart){
 //       else return view ('welcome')->withMessage('No Details found. Try to search again !');
    }
 
+
+
+   public function tnc(){
+        return view('terms-condition');
+   }
+
 }
