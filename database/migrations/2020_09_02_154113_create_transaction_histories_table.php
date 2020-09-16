@@ -18,7 +18,13 @@ class CreateTransactionHistoriesTable extends Migration
             $table->integer('user_id');
             $table->integer('note_id');
             $table->string('status')->nullable();
+            $table->integer('amount')->nullable();
+            $table->string('currency')->nullable();
+            $table->string('network')->nullable();
+            $table->string('tx_ref')->nullable();
+            $table->string('device_fingerprint')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

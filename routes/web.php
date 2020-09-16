@@ -48,6 +48,10 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('single-note/add-to-cart/{note_id}', 'PagesContoller@addToCart')->name('add-to-cart');
   Route::get('note-upload', 'NoteController@create')->name('note-upload');
 
+    Route::post('/pay', 'PaymentController@initialize')->name('pay');
+    Route::post('/payment/callback', 'PaymentController@callback')->name('callback');
+    Route::get('/order-complete', 'PagesContoller@orderComplete')->name('callback');
+
 
 // ############ User Profile     ##################
     Route::get('profile', 'UserProfileController@profile')->name('profile');
@@ -115,9 +119,10 @@ Route::get('download/{file}','AdminController@download');
 // payment
 
 
-Route::post('/pay', 'PaymentController@initialize')->name('pay');
-Route::post('/payment/callback', 'PaymentController@callback')->name('callback');
-Route::get('/pay', 'PaymentController@pay')->name('pay-here');
+
+//Route::get('/pay', 'PaymentController@pay')->name('pay-here');
+
+
 
 
 

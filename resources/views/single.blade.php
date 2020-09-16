@@ -230,7 +230,22 @@
                                 <li class="list-inline-item"><a href="{{url('confirm-order')}} " class="btn btn-contact d-inline-block   px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white">Download for free</a></li>
                             @else
                                 <li class="list-inline-item"><a href="add-to-cart/{{$note->id}}" class="btn btn-contact d-inline-block   px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white">Add to Cart</a></li>
-                                <li class="list-inline-item"><a href="{{url('confirm-order')}} " class="btn btn-contact d-inline-block   px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white">Buy</a></li>
+                            <form method="POST" action="{{ route('pay') }}" id="paymentForm">
+                                {{ csrf_field() }}
+
+                                <input type="hidden" name="amount" value="{{$note->note_price}}" />
+                                <input type="hidden" name="payment_method" value="both" />
+                                <input type="hidden" name="description" value="Purchase of note" />
+                                <input type="hidden" name="country" value="GH" />
+                                <input type="hidden" name="currency" value="GHS" />
+                                <input type="hidden" name="email" value="{{ Auth::user()->email ?? '' }}" />
+                                <input type="hidden" name="user_id" value="{{ $user->id ?? '' }}" />
+                                <input type="hidden" name="phonenumber" value="0549754268" />
+{{--                                <li class="list-inline-item"><a href="{{url('confirm-order')}} " class="btn btn-contact d-inline-block  px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white"> Buy  </a></li>--}}
+{{--                                <li class="list-inline-item"><a href="{{url('confirm-order')}} " class="btn btn-contact d-inline-block  px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white"> Buy  </a></li>--}}
+                                <li class="list-inline-item"><input type="submit" class="btn btn-contact d-inline-block  px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white" value="Buy"></li>
+                            </form>
+
 
 
 

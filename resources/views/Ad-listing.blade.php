@@ -14,18 +14,16 @@
                         </div>
                         <div class="col-lg-6">
                             <h6 class="font-weight-bold pt-4 pb-1">Title Of Notes:</h6>
-                            <input type="text" name="note_title" class="border w-100 p-2 bg-white text-capitalize" placeholder="Ad title go There">
+                            <input type="text" name="note_title" class="border w-100 p-2 bg-white text-capitalize" placeholder="Ad title go There" value="{{old('note_title')}}">
                             @if ($errors->has('note_title'))
                                 <span class="error" style="color: indianred;">{{ $errors->first('note_title') }}</span>
                             @endif
-                            <h6 class="font-weight-bold pt-4 pb-1">Ad Type:</h6>
+                            <h6 class="font-weight-bold pt-4 pb-1">Note Type:</h6>
                             <div class="row px-3">
                                 <div class="col-lg-4 mr-lg-4 my-2 rounded bg-white">
                                     <input type="radio" name="note_type" value="Notes" id="personal">
                                     <label for="personal" class="py-2">Notes</label>
-                                    @if ($errors->has('note_type'))
-                                        <span class="error" style="color: indianred;">{{ $errors->first('note_type') }}</span>
-                                    @endif
+
                                 </div>
                                 <div class="col-lg-4 mr-lg-4 my-2 rounded bg-white ">
                                     <input type="radio" name="note_type" value="Study Guide" id="business">
@@ -35,6 +33,9 @@
                                     <input type="radio" name="note_type" value="Research Paper" id="business">
                                     <label for="business" class="py-2">Research Paper</label>
                                 </div>
+                                @if ($errors->has('note_type'))
+                                    <span class="error" style="color: indianred;">{{ $errors->first('note_type') }}</span>
+                                @endif
                             </div>
                             <h6 class="font-weight-bold pt-4 pb-1">Thumbnail Image for Notes</h6>
                             <div class="choose-file text-center my-4 py-4 rounded">
@@ -44,14 +45,14 @@
                                     <span class="d-block">or</span>
                                     <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
 
-                                    <input type="file" class="form-control-file" id="file-upload" name="note_thumbnail">
+                                    <input type="file" class="form-control-file" id="file-upload" name="note_thumbnail" value="{{old('note_thumbnail')}}">
                                     @if ($errors->has('note_thumbnail'))
                                         <span class="error" style="color: indianred;">{{ $errors->first('note_thumbnail') }}</span>
                                     @endif
                                 </label>
                             </div>
                             <h6 class="font-weight-bold pt-4 pb-1">Description:</h6>
-                            <textarea name="note_description" id="" maxlength="100" class="border p-3 w-100" rows="5" placeholder="Write details about your product"></textarea>
+                            <textarea name="note_description" id="" maxlength="100" class="border p-3 w-100" rows="5" placeholder="Write details about your product" value="{{old('note_description')}}"></textarea>
                             @if ($errors->has('note_description'))
                                 <span class="error" style="color: indianred;">{{ $errors->first('note_description') }}</span>
                             @endif
@@ -92,7 +93,7 @@
                                 <div class="row px-3">
                                     <div class="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
                                         <select name="note_price" id="inputGroupSelect" class="w-100">
-{{--                                          <option value="Free">Free</option>--}}
+                                          <option value="0">0</option>
                                           <option value="1">1</option>
                                           <option value="2">2</option>
                                           <option value="3">3</option>
@@ -116,7 +117,7 @@
                                     <span class="d-block">or</span>
                                     <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
 
-                                    <input type="file" class="form-control-file " id="note_pdf" name="note_pdf">
+                                    <input type="file" class="form-control-file " id="note_pdf" name="note_pdf" value="{{old('note_pdf')}}">
                                 </label>
                                 @if ($errors->has('note_pdf'))
                                     <span class="error" style="color: indianred;">{{ $errors->first('note_pdf') }}</span>
@@ -129,7 +130,7 @@
                                     <span class="d-block">or</span>
                                     <span class="d-block btn bg-primary text-white my-3 select-files">Select PDF files</span>
 
-                                    <input type="file" class="form-control-file " id="note_pdf_image_sample" name="note_pdf_image_sample">
+                                    <input type="file" class="form-control-file " id="note_pdf_image_sample" name="note_pdf_image_sample" value="{{old('note_pdf_image_sample')}}">
                                 </label>
                                 @if ($errors->has('note_pdf_image_sample'))
                                     <span class="error" style="color: indianred;">{{ $errors->first('note_pdf_image_sample') }}</span>
@@ -150,14 +151,14 @@
                     @auth
                     <div class="col-lg-6">
                         <h6 class="font-weight-bold pt-4 pb-1">Author's Name:</h6>
-                        <input type="text" name="" value=" {{Auth::user()->username}}" placeholder="Contact name" class="border w-100 p-2">
+                        <input type="text" name="" value=" {{Auth::user()->username}}" placeholder="Contact name" class="border w-100 p-2" disabled>
                         <h6 class="font-weight-bold pt-4 pb-1">Email</h6>
-                        <input type="text" name="" value="{{Auth::user()->email}}" placeholder="Your Email" class="border w-100 p-2">
+                        <input type="text" name="" value="{{Auth::user()->email}}" placeholder="Your Email" class="border w-100 p-2" disabled>
                     </div>
                     @endauth
                     <div class="col-lg-6">
                          <h6 class="font-weight-bold pt-4 pb-1">About You:</h6>
-                            <textarea name="note_creator_achievements" maxlength="30" id="" class="border p-3 w-100" rows="7" placeholder="About you/achievements"></textarea>
+                            <textarea name="note_creator_achievements" maxlength="30" id="" class="border p-3 w-100" rows="7" placeholder="About you/achievements" value="{{old('note_creator_achievements')}}"></textarea>
                         @if ($errors->has('note_creator_achievements'))
                             <span class="error" style="color: indianred;">{{ $errors->first('note_creator_achievements') }}</span>
                         @endif
@@ -176,7 +177,7 @@
             <div class="checkbox d-inline-flex">
                 <input type="checkbox" name="checkbox" id="terms-&-condition" class="mt-1">
                 <label for="terms-&-condition" class="ml-2">By click you must agree with our
-                    <span> <a class="text-success" href="terms-condition.html">Terms & Condition and Posting Rules.</a></span>
+                    <span> <a class="text-success" href="{{url('terms-and-condition')}}">Terms & Condition and Posting Rules.</a></span>
                 </label>
                 @if ($errors->has('checkbox'))
                     <span class="error" style="color: indianred;">       {{ $errors->first('checkbox') }}</span>

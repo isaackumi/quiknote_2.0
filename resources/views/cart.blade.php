@@ -40,15 +40,15 @@
               <tr>
 
                 <td class="product-thumb">
-                  <img width="80px" class="rounded-circle" height="auto" src="/storage/uploads/{{ $note->note_thumbnail }} " alt="image description"></td>
+                  <img width="80px" class="rounded-circle" height="auto" src="/storage/uploads/{{ $note->note_thumbnail ?? ''}} " alt="image description"></td>
                 <td class="product-details">
-                  <h3 class="title">{{ $note->note_title }}</h3>
-                  <span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
-                  <span><strong>Posted on: </strong><time>{{ date('d M, Y', strtotime($note->created_at)) }}</time> </span>
+                  <h3 class="title">{{ $note->note_title ?? '' }}</h3>
+{{--                  <span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>--}}
+                  <span><strong>Posted on: </strong><time>{{ date('d M, Y', strtotime($note->created_at ?? '')) }}</time> </span>
                   <span class="status active"><strong>Status</strong>Pending</span>
-                  <span class="location"><strong>University</strong>{{$note->university}}</span>
+                  <span class="location"><strong>University</strong>{{$note->university ?? ''}}</span>
                 </td>
-                <td class="product-category"><span class="categories">{{$note->note_type}}</span></td>
+                <td class="product-category"><span class="categories">{{$note->note_type ?? ''}}</span></td>
                 <td class="action" data-title="Action">
                   <div class="">
                     <ul class="list-inline justify-content-center">
@@ -92,7 +92,7 @@
         <!-- pagination -->
         <div class="pagination justify-content-center">
 					<nav aria-label="Page navigation example">
-						{{$carts ?? ''->links()}}
+{{--						{{$carts ?? ''->links()}}--}}
 					</nav>
 				</div>
         <!-- pagination -->

@@ -18,10 +18,10 @@
 	  <p class="lead">Enjoy your studies😉</p>
 	  <hr>
 	  <p>
-	    Having trouble? <a href="">Contact us</a>
+	    Having trouble? <a href="{{ url('contact-us') }}">Contact us</a>
 	  </p>
 	  <p class="lead">
-	    <a class="btn  btn-sm" href="{{url('/pay')}}" role="button" style="background-color: #800000; color: white">Continue to Download</a>
+	    <a class="btn  btn-sm" href="#" role="button" style="background-color: #800000; color: white">Continue to Download</a>
 	  </p>
 	</div>
 </body>

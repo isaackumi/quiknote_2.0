@@ -128,20 +128,23 @@ foreach ( $carts as $cart){
       return view('package');
     }
 
+    public function orderComplete(){
+        return view('order-complete');
+    }
 
     public function single($id)
     {
 
         $note = Note::find($id);
 //        dd($note);
-//        $user = Auth::User();
+        $user = Auth::User();
         $comment = Note::join('comments','comments.note_id','=','notes.id')->orderBy('comments.created_at', 'desc')->paginate(3);
 
         $user_with_notes_created = User::join('notes','notes.user_id','=','users.id')->where('notes.id','=',$id)->get();
 //        $user_with_notes_created =$user[0];
 //        dd($user);
 
-       return view('single',compact('user_with_notes_created','comment'));
+       return view('single',compact('user_with_notes_created','comment','user'));
     }
 
 

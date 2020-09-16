@@ -18,11 +18,11 @@
 						<ul class="list-inline">
                             @forelse($all_courses as $course)
 							<li class="list-inline-item">
-								<a href="category.html"><i class="fa fa-book"></i> {{$course->course_name}}</a></li>
+								<a href="#category"><i class="fa fa-book"></i> {{$course->course_name}}</a></li>
 
                             @empty
                                 <li class="list-inline-item">
-                                    <a href="category.html"><i class="fa fa-book"></i> FDE</a>
+                                    <a href="#category.html"><i class="fa fa-book"></i> FDE</a>
                                 </li>
                             @endforelse
 
