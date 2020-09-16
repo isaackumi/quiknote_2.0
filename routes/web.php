@@ -19,12 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 // Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', 'PagesContoller@index')->name('index');
 Route::get('/about-us', 'PagesContoller@about')->name('about-us');
 Route::get('/terms-and-condition', 'PagesContoller@tnc')->name('tnc');
 Route::get('/contact-us', 'PagesContoller@contact')->name('contact-us');
-Route::get('/terms-condition', 'PagesContoller@terms')->name('terms-condition');
+//Route::get('/terms-condition', 'PagesContoller@terms')->name('terms-condition');
 Route::get('/pricing', 'PagesContoller@pricing')->name('pricing');
 Route::get('/blog', 'PagesContoller@blog')->name('blog');
 //Route::get('/cart', 'PagesContoller@cart')->name('cart');

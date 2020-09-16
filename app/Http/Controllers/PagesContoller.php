@@ -26,7 +26,7 @@ class PagesContoller extends Controller
 
     public function about()
     {
-      return view('dashboard');
+      return view('about-us');
     }
     public function dashboard()
     {
@@ -38,12 +38,12 @@ class PagesContoller extends Controller
 
     public function contact()
     {
-      return view('dashboard');
+      return view('contact-us');
     }
 
     public function terms()
     {
-      return view('dashboard');
+      return view('terms-condition');
     }
 
     public function pricing()

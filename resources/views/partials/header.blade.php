@@ -80,10 +80,10 @@
 									<a class="dropdown-item" href="{{route('contact-us')}}">Contact Us</a>
 									<!-- <a class="dropdown-item" href="user-profile.html">User Profile</a> -->
 
-									<a class="dropdown-item" href="{{route('pricing')}}">Pricing Package</a>
+{{--									<a class="dropdown-item" href="{{route('pricing')}}">Pricing Package</a>--}}
 
-									<a class="dropdown-item" href="{{route('blog')}}">Blog</a>
-									<a class="dropdown-item" href="{{route('terms-condition')}}">Terms & Condition</a>
+{{--									<a class="dropdown-item" href="{{route('blog')}}">Blog</a>--}}
+									<a class="dropdown-item" href="{{url('terms-and-condition')}}">Terms & Condition</a>
 
 								</div>
 							</li>

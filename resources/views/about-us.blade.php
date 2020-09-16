@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="about-img">
-                    <img src="images/about/about.jpg" class="img-fluid w-100 rounded" alt="">
+                    <img src="{{asset('assets/images/about/about.jpg')}}" class="img-fluid w-100 rounded" alt="">
                 </div>
             </div>
             <div class="col-lg-6 pt-5 pt-lg-0">
@@ -55,7 +55,7 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card my-3 my-lg-0">
-                    <img class="card-img-top" src="images/team/team1.jpg" class="img-fluid w-100" alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('assets/images/team/team1.jpg')}}" class="img-fluid w-100" alt="Card image cap">
                     <div class="card-body bg-gray text-center">
                         <h5 class="card-title">John Doe</h5>
                         <p class="card-text">Founder / CEO</p>
@@ -64,7 +64,7 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card my-3 my-lg-0">
-                    <img class="card-img-top" src="images/team/team2.jpg" class="img-fluid w-100" alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('assets/images/team/team2.jpg')}}" class="img-fluid w-100" alt="Card image cap">
                     <div class="card-body bg-gray text-center">
                         <h5 class="card-title">John Doe</h5>
                         <p class="card-text">Founder / CEO</p>
@@ -73,7 +73,7 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card my-3 my-lg-0">
-                    <img class="card-img-top" src="images/team/team3.jpg" class="img-fluid w-100" alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('assets/images/team/team3.jpg')}}" class="img-fluid w-100" alt="Card image cap">
                     <div class="card-body bg-gray text-center">
                         <h5 class="card-title">John Doe</h5>
                         <p class="card-text">Founder / CEO</p>
@@ -82,7 +82,7 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card my-3 my-lg-0">
-                    <img class="card-img-top" src="images/team/team4.jpg" class="img-fluid w-100" alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('assets/images/team/team4.jpg')}}" class="img-fluid w-100" alt="Card image cap">
                     <div class="card-body bg-gray text-center">
                         <h5 class="card-title">John Doe</h5>
                         <p class="card-text">Founder / CEO</p>

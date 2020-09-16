@@ -86,7 +86,7 @@
     <div class="thumb-content">
       <!-- <div class="price">$200</div> -->
       <a href="{{url('single-note')}}/{{$note->id}}">
-        <img style="width:100%;" class="card-img-top img-fluid" src="/storage/uploads/{{ $note->note_thumbnail }} " alt="Card image cap">
+        <img style="width:100%;" class="card-img-top img-fluid" src="{{ URL::to('/') }}/storage/uploads/{{ $note->note_thumbnail }} " alt="Card image cap">
       </a>
     </div>
     <div class="card-body">
