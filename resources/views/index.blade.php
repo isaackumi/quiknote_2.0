@@ -35,37 +35,20 @@
 						<div class="container">
 							<div class="row justify-content-center">
 								<div class="col-lg-12 col-md-12 align-content-center">
-										<form method="post" action="{{url('search')}}">
-                                            @csrf
+										<form method="GET" action="{{url('search')}}">
+
 											<div class="form-row">
 												<div class="form-group col-md-4">
-													<input type="text" name="searchterm" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
+													<input type="text" name="searchterm" value="{{request()->input('searchterm')}}" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
 												</div>
 
-												<div class="form-group col-md-3">
-													<select class="w-100 form-control mt-lg-1 mt-md-2">
-														<option>School</option>
-														<option value="Ashesi University">Ashesi University</option>
-														<option value="University of Ghana">University of Ghana</option>
-														<option value="KNUST">KNUST</option>
-													</select>
-												</div>
+                                                <div class="form-group col-md-3">
+                                                    <input type="text" name="uni" value="{{request()->input('uni')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
+                                                </div>
 
-												<div class="form-group col-md-3">
-													<select class="w-100 form-control mt-lg-1 mt-md-2">
-														<option>Courses</option>
-                                                        @forelse($all_courses as $course)
-														<option value="1">{{$course->course_name}}</option>
-
-                                                        @empty
-                                                            <option value="2">University of Ghana</option>
-                                                        @endforelse
-
-													</select>
-												</div>
-
-
-
+                                                <div class="form-group col-md-3">
+                                                    <input type="text" name="course" value="{{request()->input('course')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
+                                                </div>
 
 												<div class="form-group col-md-2 align-self-center">
 													<button type="submit" class="btn" style="background-color: #800000; color: white">Search Now</button>
@@ -247,7 +230,7 @@
 				<!-- Section title -->
 				<div class="section-title">
 					<h2>Notes, Study Guides, Research Papers</h2>
-					<p>Explore and accumulate knowlege from every corner!</p>
+					<p>Explore and accumulate knowledge from every corner!</p>
 				</div>
 				<div class="row">
 					<!-- Category list -->
@@ -258,7 +241,7 @@
 	<div class="card">
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
-			<a href="single-note/{{$note->id}}">
+			<a href="/single-note/{{$note['id']}}">
 				<img class="card-img-top img-fluid" src=" {{ URL::to('/') }}/storage/uploads/{{ $note->note_thumbnail }}   " alt="Card image cap">
 			</a>
             <div class="price-tag" style="background-color: #800000; color: white">
@@ -272,7 +255,7 @@
             </div>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single-note/{{$note->id}}">{{ $note->note_type ?? ' Note Type' }}</a></h4>
+		    <h4 class="card-title"><a href="single-note/{{$note['id']}}">{{ $note->note_type ?? ' Note Type' }}</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
 {{--		    		<a href=" single-note/{{$note->id}}"><i class="fa fa-folder-open-o"></i>{{ $note->note_title ?? 'Note Title' }}</a>--}}

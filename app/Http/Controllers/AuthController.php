@@ -43,8 +43,8 @@ class AuthController extends Controller
     {
         request()->validate([
           'username' => 'required|regex:/^[a-zA-Z]+$/u',
-          'major' => 'required|regex:/^[a-zA-Z]+$/u',
-          'university' => 'required|regex:/^[a-zA-Z]+$/u',
+          'major' => 'required',
+          'university' => 'required',
           'email' => 'required|email|unique:users',
           'password' => 'min:6|required_with:password_confirmation|same:confirm-password',
             'confirm-password'=>'min:6'

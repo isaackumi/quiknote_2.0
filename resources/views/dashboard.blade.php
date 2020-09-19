@@ -25,6 +25,7 @@
             <h5 class="text-center"> Major: {{ Auth::user()->major }}</h5>
               <h5 class="text-center">{{ Auth::user()->university }}</h5>
             <p>Joined on :   {{ date('d M, Y', strtotime(Auth::user()->created_at)) }} </p>
+                  <a class="nav-link text-white add-button" href="{{ url('profile') }}" style="background-color: #800000">Change Profile</a>
 
           </div>
           @endif
@@ -34,10 +35,10 @@
               <li class="active"><a href="recommended.html" style="background-color: #800000"><i class="fa fa-user"></i> My Notes</a></li>
 
               <li><a href="recommended.html"><i class="fa fa-file-archive-o"></i>Recommended Notes <span>12</span></a></li>
-              <li><a href="pending.html"><i class="fa fa-bolt"></i> Pending Approval<span>23</span></a></li>
-              <li><a href="sold.html"><i class="fa fa-money"></i>Sold Notes<span>23</span></a></li>
-              <li><a href="login.html"><i class="fa fa-cog"></i> Logout</a></li>
-              <li><a href="ad-listing.html"><i class="fa fa-book"></i>Add Notes</a></li>
+              <li><a href="#pending.html"><i class="fa fa-bolt"></i> Pending Approval<span>{{$pending_notes ?? ''}}</span></a></li>
+              <li><a href="#sold.html"><i class="fa fa-money"></i>Sold Notes<span>23</span></a></li>
+              <li><a href="#login.html"><i class="fa fa-cog"></i> Logout</a></li>
+              <li><a href="#ad-listing.html"><i class="fa fa-book"></i>Add Notes</a></li>
             </ul>
           </div>
 
@@ -100,15 +101,7 @@
           </li>
         </ul>
         <p class="card-text">{{ substr($note->note_description, 0,  20) }} ...</p>
-        <div class="product-ratings">
-          <ul class="list-inline">
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-          </ul>
-        </div>
+
     </div>
   </div>
 </div>

@@ -29,7 +29,7 @@
 							<li class="list-inline-item"><i class="fa fa-user-o"></i> {{$note->username ?? 'Username'}} </li>
 							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i> {{ $note->course_name ?? 'Course Name' }}</li>
 							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> University:<a href=""> {{$note->university ?? 'University'}} </a></li>
-							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Date: <a href="">{{ $note->created_at  ?? "Date Created"}}</a></li>
+							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Date: <a href="">{{ date('d M, Y', strtotime($note->created_at)) }}</a></li>
 						</ul>
 					</div>
 
@@ -57,17 +57,17 @@
 					<section class="section1">
 					<!-- <div class="container "> -->
 						<!-- <div class="row"> -->
-						<button class="like">
+						<button class="like rounded" id="like">
 
-							<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-							<p> </p>
-							<p id="like">10</p>
+							<i class="fa fa-thumbs-o-up" aria-hidden="true" style="color:green;"></i>
+
+							<p id="like" style="color: green;">10</p>
 						</button>
 
-						<button class="dislike">
-							<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-							<p> </p>
-							<p id="dislike">100</p>
+						<button class="dislike rounded" id="dislike">
+							<i class="fa fa-thumbs-o-down" aria-hidden="true" style="color:red;"></i>
+
+							<p id="dislike" style="color:red;">100</p>
 						</button>
 
 
@@ -95,8 +95,8 @@
 								<h3 class="tab-title">Note Description</h3>
 								<p> {{$note->note_description}}</p>
 
-								<iframe width="100%" height="400" src="https://www.youtube.com/embed/LUH7njvhydE?rel=0&amp;controls=0&amp;showinfo=0"
-								 frameborder="0" allowfullscreen></iframe>
+{{--								<iframe width="100%" height="400" src="https://www.youtube.com/embed/LUH7njvhydE?rel=0&amp;controls=0&amp;showinfo=0"--}}
+{{--								 frameborder="0" allowfullscreen></iframe>--}}
 								<p></p>
 								<p>...</p>
 
@@ -227,7 +227,7 @@
 
                             @if($note->note_price == 0)
 
-                                <li class="list-inline-item"><a href="{{url('confirm-order')}} " class="btn btn-contact d-inline-block   px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white">Download for free</a></li>
+                                <li class="list-inline-item"><a href="/download/{{$note->note_pdf}}" class="btn btn-contact d-inline-block   px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white">Download for free</a></li>
                             @else
                                 <li class="list-inline-item"><a href="add-to-cart/{{$note->id}}" class="btn btn-contact d-inline-block   px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white">Add to Cart</a></li>
                             <form method="POST" action="{{ route('pay') }}" id="paymentForm">
@@ -238,9 +238,12 @@
                                 <input type="hidden" name="description" value="Purchase of note" />
                                 <input type="hidden" name="country" value="GH" />
                                 <input type="hidden" name="currency" value="GHS" />
-                                <input type="hidden" name="email" value="{{ Auth::user()->email ?? '' }}" />
-                                <input type="hidden" name="user_id" value="{{ $user->id ?? '' }}" />
-                                <input type="hidden" name="phonenumber" value="0549754268" />
+                                @if(Auth::user())
+                                <input type="hidden" name="email" value="{{ Auth::user()->email}}" />
+                                <input type="hidden" name="user_id" value=" {{ Auth::user()->id }}" />
+{{--                                <input type="hidden" name="phonenumber" value="0549754268" />--}}
+
+                                @endif
 {{--                                <li class="list-inline-item"><a href="{{url('confirm-order')}} " class="btn btn-contact d-inline-block  px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white"> Buy  </a></li>--}}
 {{--                                <li class="list-inline-item"><a href="{{url('confirm-order')}} " class="btn btn-contact d-inline-block  px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white"> Buy  </a></li>--}}
                                 <li class="list-inline-item"><input type="submit" class="btn btn-contact d-inline-block  px-lg-5 my-1 px-md-3" style="background-color: #800000; color: white" value="Buy"></li>

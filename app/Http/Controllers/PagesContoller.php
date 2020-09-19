@@ -16,11 +16,12 @@ class PagesContoller extends Controller
 {
     public function index()
     {
-        $all_courses = Note::select('course_name')->get();
-        $premium_users_note = Note::join('memberships','memberships.user_id','=','notes.user_id')->where('package_name','Premium')->where('note_status','Approved')->paginate(8);
+        $all_courses = Note::select('course_name')->orderBy(DB::raw('RAND()'))->get();
+        $premium_users_note = Membership::join('notes','memberships.user_id','=','notes.user_id')->where('package_name','Premium')->where('note_status','Approved')->orderBy(DB::raw('RAND()'))->paginate(8);
 
 
 
+//dd(data_get($premium_users_note,'note_description'));
         return view('index',compact('premium_users_note','all_courses'));
     }
 
@@ -32,8 +33,13 @@ class PagesContoller extends Controller
     {
 //Get all notes and pass to view.
         $notes = Note::where('user_id','=',Auth::User()->id)->paginate(6);
-        dd($notes);
-        return view('dashboard', array('user' => Auth::user()) )->with('notes',$notes);
+        $user = Auth::user();
+
+        $pending_notes = Note::where('note.user_id','=',Auth::User()->id)->where('note_status','=','pending')->get();
+
+        //($pending_notes);
+//        dd($notes);
+        return view('dashboard',compact('pending_notes','notes','user'));
     }
 
     public function contact()
@@ -151,24 +157,40 @@ foreach ( $carts as $cart){
 
    public function allNotes()
    {
-       $all_notes = Note::paginate(9);
+       $all_notes = Note::where('note_status','=','approved')->paginate(9);
        $all_courses = Note::select('course_name')->get();
        $universities = User::select('university')->get();
        return view('category',compact('all_notes','all_courses','universities'));
    }
 
-   public function search(Request $request)
-   {
+   public function search(Request $request){
 //       dd($request);
-       $request->validate([
-           'search-term'=> 'required|min:3'
-       ]);
-       $search_term = $request->input('search-term');
-       dd($search_term);
+//       $request->validate([
+//           'search-term'=> 'required|min:3'
+//       ]);
+//       $search_term = $request->input('search-term');
+//       dd($search_term);
 //       $user = User::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
 //       if(count($user) > 0)
 //           return view('welcome')->withDetails($user)->withQuery ( $q );
 //       else return view ('welcome')->withMessage('No Details found. Try to search again !');
+
+       $search_term = $request->input('searchterm');
+
+//       dd($search_term);
+       $uni = $request->input('uni');
+       $course = $request->input('course');
+
+       $notes = Note::where('note_type','like',"%{$search_term}%")
+           ->orWhere('note_price','like',"%{$search_term}%")
+           ->orWhere('note_title','like',"%{$search_term}%")
+           ->orWhere('note_description','like',"%{$search_term}%")
+           ->orWhere('course_name','like',"%{$search_term}%")->paginate(9);
+
+//       $notes =  Note::search($search_term)->paginate(9);
+
+       return view('search-result',compact('notes'));
+
    }
 
 
@@ -176,5 +198,14 @@ foreach ( $carts as $cart){
    public function tnc(){
         return view('terms-condition');
    }
+
+
+    public function completeMembership(){
+        return view('complete-membership');
+    }
+
+    public function searchResult(){
+        return view('search-result');
+    }
 
 }

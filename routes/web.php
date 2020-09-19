@@ -34,6 +34,7 @@ Route::get('/package', 'PagesContoller@package')->name('package');
 Route::get('all-notes','PagesContoller@allNotes');
 Route::get('single-note/{id}','PagesContoller@single');
 Route::any('search','PagesContoller@search');
+Route::get('/search-results','PagesContoller@searchResult');
 
 // Route::get('/api', 'PaymentController@index')->name('api');
 
@@ -44,6 +45,7 @@ Route::any('search','PagesContoller@search');
 Route::group(['middleware' => 'auth'], function(){
   Route::get('dashboard', 'AuthController@dashboard')->name('dashboard');
   Route::get('/membership/', 'PagesContoller@membership')->name('membership');
+  Route::get('/complete-membership/', 'PagesContoller@completeMembership')->name('complete-membership');
   Route::get('/cart', 'PagesContoller@cart')->name('cart');
     Route::get('single-note/add-to-cart/{note_id}', 'PagesContoller@addToCart')->name('add-to-cart');
   Route::get('note-upload', 'NoteController@create')->name('note-upload');
@@ -51,6 +53,11 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/pay', 'PaymentController@initialize')->name('pay');
     Route::post('/payment/callback', 'PaymentController@callback')->name('callback');
     Route::get('/order-complete', 'PagesContoller@orderComplete')->name('callback');
+
+
+
+    Route::post('/membership-pay', 'MembershipController@initialize')->name('membership-pay');
+    Route::post('/payment/callback', 'MemebershipController@callback')->name('callback');
 
 
 // ############ User Profile     ##################

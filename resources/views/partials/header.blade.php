@@ -44,7 +44,7 @@
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg navbar-light navigation">
 					<a class="navbar-brand" href="{{url('/')}}">
-						<img src="{{asset('assets/images/logo.jpg')}} " alt="LOGO" style="border-radius: -5%">
+						<img src="{{asset('assets/images/quik.jpg')}} " alt="LOGO" style="height: 50px;">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
