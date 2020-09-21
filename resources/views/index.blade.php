@@ -18,7 +18,7 @@
 						<ul class="list-inline">
                             @forelse($all_courses as $course)
 							<li class="list-inline-item">
-								<a href="#category"><i class="fa fa-book"></i> {{$course->course_name}}</a></li>
+								<a href="{{route('search',['searchterm'=>$course->course_name])}}"><i class="fa fa-book"></i> {{$course->course_name}}</a></li>
 
                             @empty
                                 <li class="list-inline-item">
@@ -95,12 +95,12 @@
 	<div class="card">
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
-			<a href="#category.html">
+			<a href="{{route('search',['searchterm'=>"Ashesi university"])}}">
 				<img class="card-img-top img-fluid" src="{{asset('assets/images/products/ashesi.jpg')}}  " alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="#category.html">Ashesi University</a></h4>
+		    <h4 class="card-title"><a href="{{route('search',['searchterm'=>"Ashesi university"])}}">Ashesi University</a></h4>
 		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
 		    <div class="product-ratings">
 		    	<!-- <ul class="list-inline">
@@ -129,7 +129,7 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="#category.html">University of Ghana</a></h4>
+		    <h4 class="card-title"><a href="{{route('search',['searchterm'=>"University of Ghana"])}}">University of Ghana</a></h4>
 
 		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
 		    <div class="product-ratings">
@@ -159,7 +159,7 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="#category.html">KNUST</a></h4>
+		    <h4 class="card-title"><a href="{{route('search',['searchterm'=>"KNUST"])}}">KNUST</a></h4>
 
 		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
 		    <div class="product-ratings">
@@ -189,7 +189,7 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="#category.html">University of Cape Coast</a></h4>
+		    <h4 class="card-title"><a href="{{route('search',['searchterm'=>"University of Capecoast"])}}">University of Cape Coast</a></h4>
 
 		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
 		    <div class="product-ratings">
@@ -242,9 +242,9 @@
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
 			<a href="/single-note/{{$note['id']}}">
-				<img class="card-img-top img-fluid" src="{{asset('storage/uploads/'.$note->note_thumbnail)}}  " alt="Card image cap">
+				<img class="card-img-top img-fluid" src="{{asset('storage/uploads/'.$note->note_thumbnail)}}   " alt="Card image cap">
 			</a>
-            <div class="price-tag" style="background-color: #800000; color: white">
+            <div class="price-tag" style="background-color: dodgerblue; color: white">
                 <h6>
                     <center class="mt-30">
                         <span class="mt-5" style=" color: white">GH¢</span>  <span style=" color: white"> {{$note->note_price}}</span>
@@ -255,17 +255,17 @@
             </div>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single-note/{{$note['id']}}">{{ $note->note_type ?? ' Note Type' }}</a></h4>
+		    <h4 class="card-title"><a href="single-note/{{$note['id']}}">{{ $note->note_title ?? ' Note Type' }}</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-{{--		    		<a href=" single-note/{{$note->id}}"><i class="fa fa-folder-open-o"></i>{{ $note->note_title ?? 'Note Title' }}</a>--}}
+		    		<a href=" single-note/{{$note->id}}"><i class="fa fa-folder-open-o"></i>{{ $note->university ?? 'Note Title' }}</a>
 		    	</li>
 		    	<li class="list-inline-item">
 		    		<a href="single-note/{{$note->id}}"><i class="fa fa-calendar ml-0"></i>{{$note->created_at->diffForHumans()}} </a>
-		    		<a href="single-note/{{$note->id}}"><i class="fa fa-calendar ml-2"></i>Read More >> </a>
+		    		<a href="single-note/{{$note->id}}"><i class="fa fa-calendar ml-2"></i>Read More</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">{{ substr($note->note_description, 0,  20) }} ...</p>
+{{--		    <p class="card-text">{{ substr($note->note_description, 0,  20) }} </p>--}}
 
 		</div>
 	</div>
@@ -340,9 +340,9 @@
                         <li class="my-4"> <i class="fa fa-check"></i> Access Notes</li>
                         <li class="my-4"> <i class="fa fa-check"></i>Preview Notes</li>
                         <li class="my-4"> <i class="fa fa-check"></i>Buy Notes</li>
-                        <li class="my-4"> <i class="fa fa-check"></i>Can't Upload Notes</li>
+                        <li class="my-4"> <i class="fa fa-cross"></i>Can't Upload Notes</li>
                     </ul>
-                    <a href="{{ route('membership',  ['package'=> 'Free'])}}" class="btn " style="background-color: #800000; color: white">Free</a>
+                    <button href="{{ route('membership',  ['package'=> 'Free','amount'=>0])}}" class="btn " style="background-color: #800000; color: white" disabled>Free</button>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -358,7 +358,7 @@
                         <li class="my-4"> <i class="fa fa-check"></i>Buy Notes</li>
                         <li class="my-4"> <i class="fa fa-check"></i>Upload Contents</li>
                     </ul>
-                    <a href="{{ route('membership', ['package'=> 'Standard'])}}" class="btn " style="background-color: #800000; color: white">Buy Now</a>
+                    <a href="{{ route('membership', ['package'=> 'Standard','amount'=>10])}}" class="btn " style="background-color: #800000; color: white">Buy Now</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mx-sm-auto">
@@ -374,7 +374,7 @@
                         <li class="my-4"> <i class="fa fa-check"></i>Buy Notes</li>
                         <li class="my-4"> <i class="fa fa-check"></i>Upload Notes + Notes Promoted on Homepage</li>
                     </ul>
-                    <a href="{{ route('membership', ['package'=> 'Premium'])}}" class="btn " style="background-color: #800000; color: white">Buy Now</a>
+                    <a href="{{ route('membership', ['package'=> 'Premium','amount'=>20])}}" class="btn " style="background-color: #800000; color: white">Buy Now</a>
                 </div>
             </div>
         </div>

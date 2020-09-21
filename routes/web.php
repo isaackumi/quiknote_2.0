@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'PagesContoller@index')->name('index');
+Route::get('/faqs', 'PagesContoller@faqs')->name('faqs');
 Route::get('/about-us', 'PagesContoller@about')->name('about-us');
 Route::get('/terms-and-condition', 'PagesContoller@tnc')->name('tnc');
 Route::get('/contact-us', 'PagesContoller@contact')->name('contact-us');
@@ -33,7 +34,7 @@ Route::get('/blog', 'PagesContoller@blog')->name('blog');
 Route::get('/package', 'PagesContoller@package')->name('package');
 Route::get('all-notes','PagesContoller@allNotes');
 Route::get('single-note/{id}','PagesContoller@single');
-Route::any('search','PagesContoller@search');
+Route::any('search','PagesContoller@search')->name('search');
 Route::get('/search-results','PagesContoller@searchResult');
 
 // Route::get('/api', 'PaymentController@index')->name('api');

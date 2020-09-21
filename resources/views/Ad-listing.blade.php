@@ -14,7 +14,7 @@
                         </div>
                         <div class="col-lg-6">
                             <h6 class="font-weight-bold pt-4 pb-1">Title Of Notes:</h6>
-                            <input type="text" name="note_title" class="border w-100 p-2 bg-white text-capitalize" placeholder="Ad title go There" value="{{old('note_title')}}">
+                            <input type="text" name="note_title" class="border w-100 p-2 bg-white text-capitalize" value="{{old('note_title')}}">
                             @if ($errors->has('note_title'))
                                 <span class="error" style="color: indianred;">{{ $errors->first('note_title') }}</span>
                             @endif
@@ -32,6 +32,11 @@
                                 <div class="col-lg-4 mr-lg-4 my-2 rounded bg-white ">
                                     <input type="radio" name="note_type" value="Research Paper" id="business">
                                     <label for="business" class="py-2">Research Paper</label>
+                                </div>
+
+                                <div class="col-lg-4 mr-lg-4 my-2 rounded bg-white ">
+                                    <input type="radio" name="note_type" value="Other" id="business">
+                                    <label for="business" class="py-2">Other</label>
                                 </div>
                                 @if ($errors->has('note_type'))
                                     <span class="error" style="color: indianred;">{{ $errors->first('note_type') }}</span>
@@ -52,7 +57,7 @@
                                 </label>
                             </div>
                             <h6 class="font-weight-bold pt-4 pb-1">Description:</h6>
-                            <textarea name="note_description" id="" maxlength="100" class="border p-3 w-100" rows="5" placeholder="Write details about your product" value="{{old('note_description')}}"></textarea>
+                            <textarea name="note_description" id="" maxlength="100" class="border p-3 w-100" rows="5" placeholder="Write details about your note" value="{{old('note_description')}}"></textarea>
                             @if ($errors->has('note_description'))
                                 <span class="error" style="color: indianred;">{{ $errors->first('note_description') }}</span>
                             @endif
@@ -152,8 +157,17 @@
                     <div class="col-lg-6">
                         <h6 class="font-weight-bold pt-4 pb-1">Author's Name:</h6>
                         <input type="text" name="" value=" {{Auth::user()->username}}" placeholder="Contact name" class="border w-100 p-2" disabled>
-                        <h6 class="font-weight-bold pt-4 pb-1">Email</h6>
-                        <input type="text" name="" value="{{Auth::user()->email}}" placeholder="Your Email" class="border w-100 p-2" disabled>
+
+                        <h6 class="font-weight-bold pt-4 pb-1">Email:</h6>
+                        <input type="text" name="" value=" {{Auth::user()->email}}" placeholder="Contact name" class="border w-100 p-2" disabled>
+
+
+
+
+                        <h6 class="font-weight-bold pt-4 pb-1">University: </h6>
+                        <input type="text" name="" value="{{Auth::user()->university}}" placeholder="Your Email" class="border w-100 p-2" disabled>
+                        <input type="hidden" name="uni" value="{{Auth::user()->university}}" placeholder="Your Email" class="border w-100 p-2">
+                        <input type="hidden" name="major" value="{{Auth::user()->major}}" placeholder="Your Email" class="border w-100 p-2">
                     </div>
                     @endauth
                     <div class="col-lg-6">

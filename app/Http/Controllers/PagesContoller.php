@@ -186,7 +186,8 @@ foreach ( $carts as $cart){
        $notes = Note::where('note_type','like',"%{$search_term}%")
            ->orWhere('note_price','like',"%{$search_term}%")
            ->orWhere('note_title','like',"%{$search_term}%")
-           ->orWhere('note_description','like',"%{$search_term}%")
+           ->orWhere('major','like',"%{$search_term}%")
+           ->orWhere('university','like',"%{$search_term}%")
            ->orWhere('course_name','like',"%{$search_term}%")->paginate(9);
 
 //       $notes =  Note::search($search_term)->paginate(9);
@@ -208,6 +209,10 @@ foreach ( $carts as $cart){
 
     public function searchResult(){
         return view('search-result');
+    }
+
+    public function faqs(){
+        return view('faqs');
     }
 
 }

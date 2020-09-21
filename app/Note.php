@@ -12,7 +12,7 @@ class Note extends Model
 
     protected $fillable = [
         "note_title","note_thumbnail","note_description","note_type","note_pdf","note_pdf_image_sample",
-        "note_creator_achievements","note_price","user_id","course_name"
+        "note_creator_achievements","note_price","user_id","course_name","uni","major"
     ];
 
     protected $searchable = [

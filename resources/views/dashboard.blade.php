@@ -37,8 +37,8 @@
               <li><a href="recommended.html"><i class="fa fa-file-archive-o"></i>Recommended Notes <span>12</span></a></li>
               <li><a href="#pending.html"><i class="fa fa-bolt"></i> Pending Approval<span>{{$pending_notes ?? ''}}</span></a></li>
               <li><a href="#sold.html"><i class="fa fa-money"></i>Sold Notes<span>23</span></a></li>
-              <li><a href="#login.html"><i class="fa fa-cog"></i> Logout</a></li>
-              <li><a href="#ad-listing.html"><i class="fa fa-book"></i>Add Notes</a></li>
+              <li><a href="#login.html"><i class="fa fa-money"></i> My Revenue</a></li>
+{{--              <li><a href="#ad-listing.html"><i class="fa fa-book"></i>Add Notes</a></li>--}}
             </ul>
           </div>
 

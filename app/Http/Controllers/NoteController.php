@@ -152,6 +152,8 @@ class NoteController extends Controller
         $note->note_type = $request->input('note_type');
         $note->course_name = $request->input('course_name');
         $note->note_price = $request->input('note_price');
+        $note->major = $request->input('major');
+        $note->university = $request->input('uni');
         $note->user_id = $request->input('user_id');
         $note->note_creator_achievements = $request->input('note_creator_achievements');
         $note->note_thumbnail = $note_thumbnail;

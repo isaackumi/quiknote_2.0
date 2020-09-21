@@ -84,6 +84,7 @@
 
 {{--									<a class="dropdown-item" href="{{route('blog')}}">Blog</a>--}}
 									<a class="dropdown-item" href="{{url('terms-and-condition')}}">Terms & Condition</a>
+									<a class="dropdown-item" href="{{url('faqs')}}">FAQs</a>
 
 								</div>
 							</li>
