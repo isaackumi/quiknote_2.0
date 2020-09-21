@@ -242,7 +242,7 @@
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
 			<a href="/single-note/{{$note['id']}}">
-				<img class="card-img-top img-fluid" src=" {{ URL::to('/') }}/storage/uploads/{{ $note->note_thumbnail }}   " alt="Card image cap">
+				<img class="card-img-top img-fluid" src="{{asset('storage/uploads/'.$note->note_thumbnail)}}  " alt="Card image cap">
 			</a>
             <div class="price-tag" style="background-color: #800000; color: white">
                 <h6>

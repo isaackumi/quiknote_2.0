@@ -1,3 +1,8 @@
 $('.like').on('click', function (event) {
-console.log(event);
+event.preventDefault();
+
+$.ajax({
+    method: "POST"
+
+});
 });
