@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Membership;
 use App\Note;
+use App\Comment;
 
 use Illuminate\Support\Facades\DB;
 
@@ -144,7 +145,8 @@ foreach ( $carts as $cart){
         $note = Note::find($id);
 //        dd($note);
         $user = Auth::User();
-        $comment = Note::join('comments','comments.note_id','=','notes.id')->orderBy('comments.created_at', 'desc')->paginate(3);
+//        $comment = Comment::where('comments.note_id','=','notes.id')->orderBy('comments.created_at', 'desc')->paginate(3);
+        $comment = Note::join('comments','notes.id','=','comments.note_id')->get();
 
         $user_with_notes_created = User::join('notes','notes.user_id','=','users.id')->where('notes.id','=',$id)->get();
 //        $user_with_notes_created =$user[0];

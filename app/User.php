@@ -70,4 +70,8 @@ class User extends Authenticatable
         // you always have to return the relationship as instance
         return $this->hasMany(TransactionHistory::class);
     }
+
+    public function likes(){
+        return $this->hasMany(Like::class);
+    }
 }

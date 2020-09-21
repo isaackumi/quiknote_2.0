@@ -47,12 +47,18 @@ class Note extends Model
     public function comment()
     {
         // you always have to return the relationship as instance
-        return $this->hasMany(Comment::class);
+//        return $this->hasMany(Comment::class);
+//        return $this->hasMany(Comment::class);
+        return $this->hasOne(Comment::class);
     }
 
     public function transaction()
     {
         // you always have to return the relationship as instance
         return $this->hasMany(TransactionHistory::class);
+    }
+
+    public function likes(){
+        return $this->hasMany(Like::class);
     }
 }

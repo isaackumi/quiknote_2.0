@@ -61,7 +61,7 @@
 
 							<i class="fa fa-thumbs-o-up" aria-hidden="true" style="color:green;"></i>
 
-							<p id="like" style="color: green;">10</p>
+							<p id="like" class="" style="color: green;">10</p>
 						</button>
 
 						<button class="dislike rounded" id="dislike">

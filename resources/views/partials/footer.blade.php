@@ -48,6 +48,7 @@
 <script src="{{asset('/assets/plugins/google-map/gmap.js')}} "></script>
 <script src="{{asset('/assets/js/script.js')}} "></script>
 <script src="{{asset('/assets/js/alert.js')}} "></script>
+<script src="{{asset('/assets/js/ajax.js')}} "></script>
 
 
 </body>

@@ -42,13 +42,13 @@
 													<input type="text" name="searchterm" value="{{request()->input('searchterm')}}" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
 												</div>
 
-                                                <div class="form-group col-md-3">
-                                                    <input type="text" name="uni" value="{{request()->input('uni')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
-                                                </div>
+{{--                                                <div class="form-group col-md-3">--}}
+{{--                                                    <input type="text" name="uni" value="{{request()->input('uni')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">--}}
+{{--                                                </div>--}}
 
-                                                <div class="form-group col-md-3">
-                                                    <input type="text" name="course" value="{{request()->input('course')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
-                                                </div>
+{{--                                                <div class="form-group col-md-3">--}}
+{{--                                                    <input type="text" name="course" value="{{request()->input('course')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">--}}
+{{--                                                </div>--}}
 
 												<div class="form-group col-md-2 align-self-center">
 													<button type="submit" class="btn" style="background-color: #800000; color: white">Search Now</button>
