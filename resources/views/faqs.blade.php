@@ -19,7 +19,7 @@
 <section class="section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 mx-auto p-0">
+            <div class="col-lg-10 mx-auto p-3">
                <div class="terms-condition-content">
 
                    <h1 class="py-3"> FAQs</h1>

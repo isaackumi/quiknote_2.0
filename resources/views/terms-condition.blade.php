@@ -19,7 +19,7 @@
 <section class="section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 mx-auto p-0">
+            <div class="col-lg-10 mx-auto p-3">
                <div class="terms-condition-content">
                 <h3 class="py-3">QuikNote Terms & Condition</h3>
                    <p>Kindly read through the Terms and Conditions thoroughly and carefully as they contain policies on the Note Website governing the use of Notes Inc. This Website is opened to any persons and/or institution for academic purposes and otherwise deemed by Notes. As a condition of using this Website, you represent and warrant that;<br>

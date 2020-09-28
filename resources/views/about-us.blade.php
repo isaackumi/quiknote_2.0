@@ -22,23 +22,19 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="about-img">
-                    <img src="{{asset('assets/images/about/about.jpg')}}" class="img-fluid w-100 rounded" alt="">
+                    <img src="{{asset('assets/images/about/walli.jpeg')}}" class="img-fluid w-100 rounded" alt="">
                 </div>
             </div>
             <div class="col-lg-6 pt-5 pt-lg-0">
                 <div class="about-content">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                     <h3 class="font-weight-bold">Introduction</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor
-                        fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id
-                        euismod. Nam sollicitudin mi quis orci lobortis feugiat.</p>
-                    <h3 class="font-weight-bold">How we can help</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor
-                        fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id
-                        euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero.
-                        Quisque et rutrum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est
-                        justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum
-                        tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat.</p>
+                    <p>QUIKNOTE is an online educational platform where registered users may contribute self-created lecture notes,materials,study guides,research papers and works forsale,access,use,and evaluation by other users of the Website. </p><br><bR>
+                    <h3 class="font-weight-bold">What is Our Brand?</h3>
+                    <p><i>"Togetherness"</i>  There is an akan proverb that says 'Nyansa nni baako fo) tirim'. This translates on person is not the bearer of all knowledge. We believe through togetherness we can share ideas and conquer. We want to revolutionalize learning in Ghana and beyond</p>
                 </div>
             </div>
         </div>
@@ -55,19 +51,10 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card my-3 my-lg-0">
-                    <img class="card-img-top" src="{{asset('assets/images/team/will.jpeg')}}" class="img-fluid w-100" alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('assets/images/team/willi.jpg')}}" class="img-fluid w-100" alt="Card image cap">
                     <div class="card-body bg-gray text-center">
                         <h5 class="card-title">William Obese</h5>
                         <p class="card-text">Founder / CEO</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="card my-3 my-lg-0">
-                    <img class="card-img-top" src="{{asset('assets/images/team/team2.jpg')}}" class="img-fluid w-100" alt="Card image cap">
-                    <div class="card-body bg-gray text-center">
-                        <h5 class="card-title">Isaac Kumi</h5>
-                        <p class="card-text">Senior Developer</p>
                     </div>
                 </div>
             </div>
@@ -82,19 +69,30 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card my-3 my-lg-0">
-                    <img class="card-img-top" src="{{asset('assets/images/team/team4.jpg')}}" class="img-fluid w-100" alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('assets/images/team/dex.jpeg')}}" class="img-fluid w-100 h-120" alt="Card image cap">
                     <div class="card-body bg-gray text-center">
-                        <h5 class="card-title">Sadat Issah</h5>
-                        <p class="card-text">Developer</p>
+                        <h5 class="card-title">Derrick Osae</h5>
+                        <p class="card-text"> Front-End Developer</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card my-3 my-lg-0">
-                    <img class="card-img-top" src="{{asset('assets/images/team/team4.jpg')}}" class="img-fluid w-100" alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('assets/images/team/kumi.jpg')}}" class="img-fluid w-100" alt="Card image cap">
                     <div class="card-body bg-gray text-center">
-                        <h5 class="card-title">Derrick Osae</h5>
-                        <p class="card-text">Frontend Developer</p>
+                        <h5 class="card-title">Isaac Kumi</h5>
+                        <p class="card-text">Back-End Developer</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="col-lg-3 col-sm-6">
+                <div class="card my-3 my-lg-0">
+                    <img class="card-img-top" src="{{asset('assets/images/team/sadat.jpg')}}" class="img-fluid w-100" alt="Card image cap">
+                    <div class="card-body bg-gray text-center">
+                        <h5 class="card-title">Sadat Issah</h5>
+                        <p class="card-text">Developer</p>
                     </div>
                 </div>
             </div>

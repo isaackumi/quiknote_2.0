@@ -11,8 +11,8 @@
 			<div class="col-md-12">
 				<!-- Header Contetnt -->
 				<div class="content-block">
-					<h1>Get your notes served to you</h1>
-					<p>Join the family now who share notes <br> everyday in local communities around the world</p>
+					<h1>Together We Share and Conquer</h1>
+					<p>Access a wide range of students-created contents <br> ranging from notes, research papers, study guides, and book summaries</p>
 					<div class="short-popular-category-list text-center">
 						<h2>Popular Category</h2>
 						<ul class="list-inline">
@@ -38,8 +38,8 @@
 										<form method="GET" action="{{url('search')}}">
 
 											<div class="form-row">
-												<div class="form-group col-md-4">
-													<input type="text" name="searchterm" value="{{request()->input('searchterm')}}" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
+												<div class="form-group col-md-10">
+													<input type="text" name="searchterm" value="{{request()->input('searchterm')}}" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="Search by Course, University, Price, or Note Title">
 												</div>
 
 {{--                                                <div class="form-group col-md-3">--}}
@@ -47,7 +47,7 @@
 {{--                                                </div>--}}
 
 {{--                                                <div class="form-group col-md-3">--}}
-{{--                                                    <input type="text" name="course" value="{{request()->input('course')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">--}}
+{{--                                                    <input type="text" name="course" value="{{request()->input('course')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="Search by Course, University, Price, or Note Title">--}}
 {{--                                                </div>--}}
 
 												<div class="form-group col-md-2 align-self-center">
@@ -101,7 +101,7 @@
 		</div>
 		<div class="card-body">
 		    <h4 class="card-title"><a href="{{route('search',['searchterm'=>"Ashesi university"])}}">Ashesi University</a></h4>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Ashesi University is a non-profit, educating ethical and entrepreneurial leaders in Africa.</p>
 		    <div class="product-ratings">
 		    	<!-- <ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -131,7 +131,7 @@
 		<div class="card-body">
 		    <h4 class="card-title"><a href="{{route('search',['searchterm'=>"University of Ghana"])}}">University of Ghana</a></h4>
 
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">The University of Ghana is the oldest and largest all national public universities.</p>
 		    <div class="product-ratings">
 		    	<!-- <ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -161,7 +161,7 @@
 		<div class="card-body">
 		    <h4 class="card-title"><a href="{{route('search',['searchterm'=>"KNUST"])}}">KNUST</a></h4>
 
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Kwame Nkrumah University of Science and Technology, Kumasi, Ghana</p>
 		    <div class="product-ratings">
 		    	<!-- <ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -191,7 +191,7 @@
 		<div class="card-body">
 		    <h4 class="card-title"><a href="{{route('search',['searchterm'=>"University of Capecoast"])}}">University of Cape Coast</a></h4>
 
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">UCC is a public collegiate research university located in Cape Coast, Ghana.</p>
 		    <div class="product-ratings">
 		    	<!-- <ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -242,7 +242,7 @@
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
 			<a href="/single-note/{{$note['id']}}">
-				<img class="card-img-top img-fluid" src="{{asset('storage/uploads/'.$note->note_thumbnail)}}   " alt="Card image cap">
+					<img class="card-img-top img-fluid" src="{{asset('storage/uploads/'.$note->note_thumbnail)}}   " alt="Card image cap">
 			</a>
             <div class="price-tag" style="background-color: dodgerblue; color: white">
                 <h6>
@@ -340,7 +340,7 @@
                         <li class="my-4"> <i class="fa fa-check"></i> Access Notes</li>
                         <li class="my-4"> <i class="fa fa-check"></i>Preview Notes</li>
                         <li class="my-4"> <i class="fa fa-check"></i>Buy Notes</li>
-                        <li class="my-4"> <i class="fa fa-cross"></i>Can't Upload Notes</li>
+                        <li class="my-4"> <i class="fa fa-window-close"></i>Can't Upload Notes</li>
                     </ul>
                     <button href="{{ route('membership',  ['package'=> 'Free','amount'=>0])}}" class="btn " style="background-color: #800000; color: white" disabled>Free</button>
                 </div>

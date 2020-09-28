@@ -19,18 +19,11 @@
 										<form method="GET" action="{{url('search')}}">
 
 											<div class="form-row">
-												<div class="form-group col-md-4">
-													<input type="text" name="searchterm" value="{{request()->input('searchterm')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
+												<div class="form-group col-md-10">
+													<input type="text" name="searchterm" value="{{request()->input('searchterm')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="Search by Course, University, Price or Note Title">
 												</div>
 
-                                                <div class="form-group col-md-3">
-													<input type="text" name="uni" value="{{request()->input('uni')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
-												</div>
-
-                                                <div class="form-group col-md-3">
-													<input type="text" name="course" value="{{request()->input('course')}}"class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
-												</div>
-
+                                                
 
 
 
